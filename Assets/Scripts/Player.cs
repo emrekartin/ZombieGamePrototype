@@ -86,9 +86,9 @@ public class Player : MonoBehaviour
         Enemy _currentEnemy;
         if (LevelManager.levelManager.stage[0].enemy.Count > 0)
         {
-            for (int i = 0; i < LevelManager.levelManager.stage[0].enemy.Count; i++)
+            foreach (var item in LevelManager.levelManager.stage[0].enemy)
             {
-                _currentEnemy = LevelManager.levelManager.stage[0].enemy[i];
+                _currentEnemy = item;
                 float distanceToEnemy = Vector3.Distance(_currentEnemy.transform.position,_tr.position);
                 if (distanceToEnemy < _closestEnemyDistance)
                 {
@@ -96,6 +96,10 @@ public class Player : MonoBehaviour
                     _enemy = _currentEnemy;
                     targetEnemy = _currentEnemy.transform;
                 }
+            }
+            for (int i = 0; i < LevelManager.levelManager.stage[0].enemy.Count; i++)
+            {
+                
             }
             if (targetEnemy.GetComponent<Enemy>().HealthofEnemy == 0)
             {
