@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     {
         Move(); 
         MoveDirection();
-        GetClosestEnemy();
+        FindClosestEnemy();
         EnemyDistance();
     }
     void Move()
@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
         Shoot();
     }
     
-    public Enemy GetClosestEnemy()
+    public Enemy FindClosestEnemy()
     {
         Enemy _enemy = null;
         float _closestEnemyDistance = Mathf.Infinity;
