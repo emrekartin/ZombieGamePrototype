@@ -97,10 +97,6 @@ public class Player : MonoBehaviour
                     targetEnemy = _currentEnemy.transform;
                 }
             }
-            for (int i = 0; i < LevelManager.levelManager.stage[0].enemy.Count; i++)
-            {
-                
-            }
             if (targetEnemy.GetComponent<Enemy>().HealthofEnemy == 0)
             {
                 targetEnemy = null;
